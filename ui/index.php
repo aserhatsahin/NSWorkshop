@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../includes/db.php';
 
 $search = trim($_GET['q'] ?? '');
 $searchParam = '%' . strtolower($search) . '%';
@@ -26,7 +26,7 @@ try {
 <head>
     <meta charset="UTF-8" />
     <title>Resim Atölyesi - Ana Sayfa</title>
-    <link rel="stylesheet" href="style.css?v=3.1" />
+    <link rel="stylesheet" href="../assets/style.css?v=3.1" />
     <script>
         let debounceTimer;
         async function liveSearch(e) {
@@ -34,7 +34,7 @@ try {
             debounceTimer = setTimeout(async () => {
                 const q = e.target.value.trim();
                 const container = document.getElementById("student-list");
-                const url = `search_students.php?q=${encodeURIComponent(q)}`;
+                const url = `../logic/search_students.php?q=${encodeURIComponent(q)}`;
 
                 try {
                     const res = await fetch(url);
@@ -48,7 +48,7 @@ try {
                     }
 
                     results.forEach(student => {
-                        const photo = student.photo_path ? `./photos/${student.photo_path}` : 'assets/default-avatar.png';
+                        const photo = student.photo_path ? `../photos/${student.photo_path}` : '../assets/default-avatar.png';
 
                         const card = document.createElement('div');
                         card.className = 'card';
@@ -72,7 +72,7 @@ try {
 <body>
 <nav class="nav-with-logo">
     <div class="branding">
-        <img src="assets/neriman.jpeg" alt="Logo" class="logo-icon" />
+        <img src="../assets/neriman.jpeg" alt="Logo" class="logo-icon" />
         <span class="site-title">Neriman Şahin Resim Atölyesi</span>
     </div>
     <div class="nav-links">
@@ -107,7 +107,7 @@ try {
             <?php foreach ($students as $student): ?>
                 <div class="card">
                     <?php
-                        $photoPath = !empty($student['photo_path']) ? './photos/' . htmlspecialchars($student['photo_path']) : 'assets/default-avatar.png';
+                        $photoPath = !empty($student['photo_path']) ? '../photos/' . htmlspecialchars($student['photo_path']) : '../assets/default-avatar.png';
                     ?>
                     <img src="<?php echo $photoPath; ?>" alt="Fotoğraf" class="student-photo" />
                     <h3><?php echo htmlspecialchars($student['name']); ?></h3>

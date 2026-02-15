@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require "../includes/db.php";
 
 // Hata raporlamayı aç (geliştirme ortamı için)
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8" />
     <title>Yeni Öğrenci Kaydı</title>
-    <link rel="stylesheet" href="style.css?v=4" />
+    <link rel="stylesheet" href="../assets/style.css?v=4" />
 </head>
 <body>
 

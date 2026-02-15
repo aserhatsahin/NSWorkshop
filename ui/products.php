@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require "../includes/db.php";
 
 // Fiyat güncelleme işlemi
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_price'])) {
@@ -37,7 +37,7 @@ $products = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Ürün Listesi</title>
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="../assets/style.css?v=4">
 </head>
 <body>
 <div class="container">

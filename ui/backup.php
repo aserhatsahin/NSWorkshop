@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require "../includes/db.php";
 
 if (!isset($_GET['student_id'])) {
     die("Öğrenci ID belirtilmedi.");
@@ -32,7 +32,7 @@ $debts = $stmt->fetchAll();
 $paid = array_filter($debts, fn($d) => $d['status'] == 1);
 $unpaid = array_filter($debts, fn($d) => $d['status'] == 0);
 
-$photo = $student['photo_path'] ? "./photos/" . htmlspecialchars($student['photo_path']) : "assets/default-avatar.png";
+$photo = $student['photo_path'] ? "../photos/" . htmlspecialchars($student['photo_path']) : "../assets/default-avatar.png";
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ $photo = $student['photo_path'] ? "./photos/" . htmlspecialchars($student['photo
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($student['name']) ?> - Hesap</title>
-    <link rel="stylesheet" href="style.css?v=3.1">
+    <link rel="stylesheet" href="../assets/style.css?v=3.1">
 </head>
 <body>
 

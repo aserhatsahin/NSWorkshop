@@ -1,5 +1,5 @@
 <?php
-require "db.php";
+require "../includes/db.php";
 
 $q = isset($_GET['q']) ? trim($_GET['q']) : '';
 

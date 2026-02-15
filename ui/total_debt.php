@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';
+require '../includes/db.php';
 
 // Kurs borçları
 $feeStmt = $db->prepare("
@@ -37,7 +37,7 @@ $grandTotal = $totalFees + $totalProds;
 <head>
   <meta charset="UTF-8">
   <title>Toplam Borçlar</title>
-  <link rel="stylesheet" href="style.css?v=updated">
+  <link rel="stylesheet" href="../assets/style.css?v=updated">
   <style>
     .container { max-width: 900px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
     h1 { text-align:center; margin-bottom:20px; }

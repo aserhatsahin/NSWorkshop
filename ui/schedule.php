@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require "../includes/db.php";
 
 // CSRF token oluştur (varsa kullan, yoksa oluştur)
 if (empty($_SESSION['csrf_token'])) {
@@ -118,7 +118,7 @@ foreach ($allStudents as $student) {
 <head>
     <meta charset="UTF-8" />
     <title>Ders Programı</title>
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="../assets/style.css?v=3" />
     <style>
         .success-msg { color: green; text-align: center; }
         .error-msg { color: red; text-align: center; }

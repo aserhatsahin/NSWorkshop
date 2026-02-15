@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require "../includes/db.php";
 
 if (!isset($_GET['student_id'])) {
     die("Geçersiz öğrenci ID.");
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
 <head>
     <meta charset="UTF-8">
     <title>Ürün Ekle</title>
-    <link rel="stylesheet" href="style.css?v=updated">
+    <link rel="stylesheet" href="../assets/style.css?v=updated">
     <style>
         .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         h1 { text-align: center; margin-bottom: 30px; }

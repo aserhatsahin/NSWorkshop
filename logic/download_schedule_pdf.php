@@ -4,7 +4,7 @@ use Dompdf\Dompdf;
 use Dompdf\Options;
 
 session_start();
-require "db.php";
+require "../includes/db.php";
 
 $days = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
-require "db.php";
-require "apply_monthly_fees.php";
+require "../includes/db.php";
+require "../logic/apply_monthly_fees.php";
 
 if (!isset($_GET['student_id'])) { 
     die("ID yok"); 
@@ -90,7 +90,7 @@ $totalDebt = $student['total_debt'];
 $message = $_SESSION['message'] ?? '';
 unset($_SESSION['message']);
 
-$photo = $student['photo_path'] ? "./photos/" . htmlspecialchars($student['photo_path']) : "assets/default-avatar.png";
+$photo = $student['photo_path'] ? "../photos/" . htmlspecialchars($student['photo_path']) : "../assets/default-avatar.png";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
     $newStatus = (int)$_POST['is_active'];
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
 <head>
     <meta charset="utf-8">
     <title><?= htmlspecialchars($student['name']) ?> - Hesap</title>
-    <link rel="stylesheet" href="style.css?v=updated">
+    <link rel="stylesheet" href="../assets/style.css?v=updated">
     <style>
         .section-box { padding:20px; background:#fff; margin-bottom:20px; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
         .section-box h2 { margin-top:0; }

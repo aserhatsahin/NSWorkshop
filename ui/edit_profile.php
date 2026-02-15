@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require "../includes/db.php";
 
 if (!isset($_GET['student_id'])) {
     die("Öğrenci ID belirtilmedi.");
@@ -50,7 +50,7 @@ $groups = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8" />
     <title>Profili Düzenle - <?= htmlspecialchars($student['name']) ?></title>
-    <link rel="stylesheet" href="style.css?v=3" />
+    <link rel="stylesheet" href="../assets/style.css?v=3" />
 </head>
 <body>
 

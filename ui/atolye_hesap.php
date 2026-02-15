@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';
+require '../includes/db.php';
 
 // Öğrenci sayıları
 $studentCountActive = $db->query("SELECT COUNT(*) FROM students WHERE is_active = 1")->fetchColumn();
@@ -47,7 +47,7 @@ $monthlyProductSales = $db->query("
 <head>
   <meta charset="UTF-8">
   <title>Atölye Hesap Özeti</title>
-  <link rel="stylesheet" href="style.css?v=updated">
+  <link rel="stylesheet" href="../assets/style.css?v=updated">
   <style>
     .container { max-width: 900px; margin: 40px auto; padding: 20px; background:#fff; border-radius: 10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
     h1, h2 { text-align: center; color: #1abc9c; margin-bottom: 20px; }
