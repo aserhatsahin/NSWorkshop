@@ -81,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
 </script>
 </head>
 <body>
+<?php include 'navbar.php'; ?>
 <div class="container">
     <h1>Ürün Ekle</h1>
 

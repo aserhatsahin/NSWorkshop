@@ -40,6 +40,7 @@ $products = $stmt->fetchAll();
     <link rel="stylesheet" href="../assets/style.css?v=4">
 </head>
 <body>
+<?php include 'navbar.php'; ?>
 <div class="container">
 <div class="product-container">
     <h1>Ürün Listesi</h1>

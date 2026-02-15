@@ -59,6 +59,7 @@ $monthlyProductSales = $db->query("
   </style>
 </head>
 <body>
+<?php include 'navbar.php'; ?>
 <div class="container">
   <h1>Atölye Hesap Özeti</h1>
 

@@ -70,20 +70,7 @@ try {
     </script>
 </head>
 <body>
-<nav class="nav-with-logo">
-    <div class="branding">
-        <img src="../assets/neriman.jpeg" alt="Logo" class="logo-icon" />
-        <span class="site-title">Neriman Şahin Resim Atölyesi</span>
-    </div>
-    <div class="nav-links">
-        <a href="index.php" class="active">Ana Sayfa</a>
-        <a href="atolye_hesap.php" class="button">Atölye Hesap</a>
-        <a href="products.php">Ürün Listesi</a>
-        <a href="total_debt.php">Toplam Borçlar</a>
-        <a href="schedule.php">Ders Programı</a>
-        <a href="student_add.php">Yeni Kayıt</a>
-    </div>
-</nav>
+<?php include 'navbar.php'; ?>
 
 <div class="container">
     <h1>Öğrenci Listesi</h1>

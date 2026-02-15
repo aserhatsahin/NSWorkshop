@@ -131,6 +131,7 @@ foreach ($allStudents as $student) {
     </style>
 </head>
 <body>
+<?php include 'navbar.php'; ?>
 
 <div class="container">
     <h1>Ders Programı</h1>

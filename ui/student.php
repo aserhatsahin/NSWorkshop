@@ -132,6 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
     </style>
 </head>
 <body>
+<?php include 'navbar.php'; ?>
 <div class="student-container">
     <?php if ($message): ?>
         <p style="color:green; text-align:center"><?= htmlspecialchars($message) ?></p>

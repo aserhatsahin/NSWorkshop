@@ -52,6 +52,7 @@ $grandTotal = $totalFees + $totalProds;
   </style>
 </head>
 <body>
+<?php include 'navbar.php'; ?>
   <div class="container">
     <h1>Toplam Borçlar</h1>
     <div class="summary">

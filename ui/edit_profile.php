@@ -53,6 +53,7 @@ $groups = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../assets/style.css?v=3" />
 </head>
 <body>
+<?php include 'navbar.php'; ?>
 
 <div class="container edit-profile-container">
     <h1>Profili Düzenle - <?= htmlspecialchars($student['name']) ?></h1>
