@@ -81,11 +81,34 @@ $products = $stmt->fetchAll();
     document.getElementById('search').addEventListener('input', function () {
         const query = this.value;
 
-        fetch('search_products.php?q=' + encodeURIComponent(query))
-            .then(response => response.text())
+        fetch('../logic/search_products.php?q=' + encodeURIComponent(query))
+            .then(response => response.json())
             .then(data => {
-                document.getElementById('product-list').innerHTML = data;
-            });
+                const productList = document.getElementById('product-list');
+                productList.innerHTML = '';
+                
+                if (data.length === 0) {
+                    productList.innerHTML = '<p>Ürün bulunamadı.</p>';
+                    return;
+                }
+
+                data.forEach(product => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+                    card.innerHTML = `
+                        <h3>${product.name}</h3>
+                        <p><strong>Tür:</strong> ${product.type}</p>
+                        <p><strong>Fiyat:</strong> ${parseFloat(product.price).toFixed(2)} ₺</p>
+                        <form method="post">
+                            <input type="hidden" name="product_id" value="${product.id}">
+                            <input type="number" name="new_price" step="0.01" min="0" value="${product.price}" required>
+                            <button type="submit" name="update_price">Fiyatı Güncelle</button>
+                        </form>
+                    `;
+                    productList.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error:', error));
     });
 </script>
 </body>

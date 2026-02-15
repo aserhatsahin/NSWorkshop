@@ -1,11 +1,11 @@
 <?php
-include '../includes/db.php';
+header('Content-Type: application/json; charset=utf-8');
+require_once '../includes/db.php';
 
 $q = trim($_GET['q'] ?? '');
 
 try {
     if ($q === '') {
-        // Boş arama ise varsayılan 6 öğrenci döndür
         $stmt = $db->prepare("
             SELECT s.*, sp.photo_path
             FROM students s
@@ -15,7 +15,6 @@ try {
         ");
         $stmt->execute();
     } else {
-        // Arama varsa filtreli sonuç döndür
         $stmt = $db->prepare("
             SELECT s.*, sp.photo_path
             FROM students s
@@ -29,6 +28,11 @@ try {
 
     $students = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($students);
+
 } catch (PDOException $e) {
-    echo json_encode([]);
+    http_response_code(500);
+    echo json_encode(['error' => 'Database error: ' . $e->getMessage()]);
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Server error: ' . $e->getMessage()]);
 }

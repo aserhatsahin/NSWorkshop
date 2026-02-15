@@ -10,4 +10,3 @@ try {
     echo "Veritabanı bağlantı hatası: " . $e->getMessage();
     exit;
 }
-?>
