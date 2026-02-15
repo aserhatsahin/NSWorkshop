@@ -76,7 +76,7 @@ try {
         <span class="site-title">Neriman Şahin Resim Atölyesi</span>
     </div>
     <div class="nav-links">
-        <a href="index.php">Ana Sayfa</a>
+        <a href="index.php" class="active">Ana Sayfa</a>
         <a href="atolye_hesap.php" class="button">Atölye Hesap</a>
         <a href="products.php">Ürün Listesi</a>
         <a href="total_debt.php">Toplam Borçlar</a>
